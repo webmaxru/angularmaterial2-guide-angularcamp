@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
+import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
+
 import { PlacesService } from './places.service';
 import { PlaceComponent } from './../place/place.component';
 
@@ -8,7 +10,7 @@ import { PlaceComponent } from './../place/place.component';
     selector: 'places',
     templateUrl: 'places.component.html',
     providers: [PlacesService],
-    directives: [PlaceComponent]
+    directives: [PlaceComponent, MD_LIST_DIRECTIVES]
 })
 export class PlacesComponent implements OnInit {
 

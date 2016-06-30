@@ -1,29 +1,38 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 import {NgClass} from '@angular/common';
 
+import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+import {MD_BUTTON_DIRECTIVES} from '@angular2-material/button';
+
 @Component({
-    selector: 'place',
-    template: `
-  <div class="component"><h3 (click)="doVisit(name)" [ngClass]="{'visited': isVisited }">{{name}}</h3></div>
-  `,
-    styles: [`
+  moduleId: module.id,
+  selector: 'place',
+  templateUrl: 'place.component.html',
+  styles: [`
   .visited {
     text-decoration: line-through;
   }
+  md-card {
+    margin-bottom: 1em;
+  }
   `],
   inputs: ['name'],
-  outputs: ['visit']
+  outputs: ['visit'],
+  directives: [
+    MD_CARD_DIRECTIVES,
+    MD_BUTTON_DIRECTIVES
+  ]
 })
 export class PlaceComponent {
 
-    isVisited: boolean = false;
+  isVisited: boolean = false;
 
-    public name: string;
-    public visit: EventEmitter<any> = new EventEmitter();
+  public name: string;
+  public visit: EventEmitter<any> = new EventEmitter();
 
-    doVisit(placeName: string) {
-        this.isVisited = !this.isVisited;
-        this.visit.emit({ name: placeName });
-    }
+  doVisit(placeName: string) {
+    this.isVisited = !this.isVisited;
+    this.visit.emit({ name: placeName });
+  }
 
 }

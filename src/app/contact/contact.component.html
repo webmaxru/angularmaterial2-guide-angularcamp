@@ -1,19 +1,18 @@
-<div class="component">
-
-    <h2>Contact us</h2>
-    
-    <form [formGroup]="modelDrivenForm" (ngSubmit)="onSubmitModelDrivenForm()">
-        <p>
-            <label>Email:</label><br/>
-            <input type="text" formControlName="email">
-        </p>
-        <p>
-            <label>Message:</label><br/>
-            <textarea formControlName="message"></textarea>
-        </p>
-        <p>
-            <button type="submit" [disabled]="!modelDrivenForm.valid">Submit</button>
-        </p>
-    </form>
-
-</div>
+<form [formGroup]="modelDrivenForm" (ngSubmit)="onSubmitModelDrivenForm()">
+  <md-card>
+    <md-card-title>Contact us</md-card-title>
+    <md-card-content>
+      <md-input placeholder="Email" formControlName="email"></md-input>
+      <md-input placeholder="Message" formControlName="message"></md-input>
+      <div>
+        <md-radio-group formControlName="type">
+          <md-radio-button value="Question">Question</md-radio-button>
+          <md-radio-button value="Request">Request</md-radio-button>
+        </md-radio-group>
+      </div>
+    </md-card-content>
+    <md-card-actions>
+      <button md-raised-button color="accent" type="submit" [disabled]="!modelDrivenForm.valid">Send</button>
+    </md-card-actions>
+  </md-card>
+</form>

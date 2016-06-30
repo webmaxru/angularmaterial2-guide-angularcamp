@@ -1,25 +1,20 @@
-<div class="component">
-
-    <h2>Feedback</h2>
+<md-card>
+  <md-card-title>Feedback</md-card-title>
+  <md-card-content>
     <form #templateDrivenForm="ngForm" (ngSubmit)="onSubmitTemplateDrivenForm(templateDrivenForm.value)" novalidate>
-        <p>
-            <label>Name:</label><br/>
-            <input type="text" name="firstName" ngModel>
-        </p>
-        <p>
-            <label>Email:</label><br/>
-            <input type="email" name="email" [ngModel]="feedbackObject.email">
-        </p>
-        <p>
-            <label>Message:</label><br/>
-            <textarea name="message" ngModel #messageControl="ngModel" required></textarea>
-            <span [hidden]="messageControl.valid || messageControl.pristine">
-                Message is required
-            </span>
-        </p>
-        <p>
-            <button type="submit">Submit</button>
-        </p>
+      <md-input placeholder="Name" name="firstName" ngModel></md-input>
+      <md-input placeholder="Email" name="email" [ngModel]="feedbackObject.email"></md-input>
+      <md-input placeholder="Message" name="message" ngModel #messageControl="ngModel" required>
+        <md-hint [hidden]="messageControl.valid || messageControl.pristine">
+          Message is required
+        </md-hint>
+      </md-input>
+      <div>
+        <md-checkbox name="agree" ngModel indeterminate="true" required>I agree with terms</md-checkbox>
+      </div>
     </form>
-
-</div>
+  </md-card-content>
+  <md-card-actions>
+    <button md-raised-button color="primary" type="submit">Send</button>
+  </md-card-actions>
+</md-card>
