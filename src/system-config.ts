@@ -16,9 +16,8 @@ const packages: any = {
 
 // Names of Material components here
 const materialPkgs:string[] = [
-  'core',
-  'button',
-  'icon',
+  'core', 'toolbar', 'button', 'card', 'checkbox', 'icon', 'input', 'list', 'progress-bar',
+    'progress-circle', 'radio', 'sidenav', 'grid-list', 'tabs', 'slide-toggle'
 ];
 
 materialPkgs.forEach((pkg) => {
