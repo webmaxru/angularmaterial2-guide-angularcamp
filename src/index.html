@@ -2,19 +2,14 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Angularmaterial2GuideAngularcamp</title>
+  <title>Guide - Angular Material 2 - Angularcamp</title>
   <base href="/">
-
-  {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
-  {{/unless}}
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-  <app-root>Loading...</app-root>
-
-  
+  <app>Loading...</app>
 
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
@@ -24,8 +19,6 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-
-  
 
 </body>
 </html>

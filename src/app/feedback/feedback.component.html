@@ -1,0 +1,25 @@
+<div class="component">
+
+    <h2>Feedback</h2>
+    <form #templateDrivenForm="ngForm" (ngSubmit)="onSubmitTemplateDrivenForm(templateDrivenForm.value)" novalidate>
+        <p>
+            <label>Name:</label><br/>
+            <input type="text" name="firstName" ngModel>
+        </p>
+        <p>
+            <label>Email:</label><br/>
+            <input type="email" name="email" [ngModel]="feedbackObject.email">
+        </p>
+        <p>
+            <label>Message:</label><br/>
+            <textarea name="message" ngModel #messageControl="ngModel" required></textarea>
+            <span [hidden]="messageControl.valid || messageControl.pristine">
+                Message is required
+            </span>
+        </p>
+        <p>
+            <button type="submit">Submit</button>
+        </p>
+    </form>
+
+</div>

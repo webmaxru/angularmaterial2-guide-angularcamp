@@ -7,11 +7,23 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
+  '@angular2-material': 'vendor/@angular2-material' // Where to look when you import @angular2-material
 };
 
 /** User packages configuration. */
 const packages: any = {
 };
+
+// Names of Material components here
+const materialPkgs:string[] = [
+  'core',
+  'button',
+  'icon',
+];
+
+materialPkgs.forEach((pkg) => {
+  packages[`@angular2-material/${pkg}`] = {main: `${pkg}.js`};
+});
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 /***********************************************************************************************
@@ -26,13 +38,14 @@ const barrels: string[] = [
   '@angular/router',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
+  '@angular/forms',
 
   // Thirdparty barrels.
   'rxjs',
 
   // App specific barrels.
   'app',
-  'app/shared',
+
   /** @cli-barrel */
 ];
 

@@ -1,0 +1,19 @@
+<div class="component">
+
+    <h2>Contact us</h2>
+    
+    <form [formGroup]="modelDrivenForm" (ngSubmit)="onSubmitModelDrivenForm()">
+        <p>
+            <label>Email:</label><br/>
+            <input type="text" formControlName="email">
+        </p>
+        <p>
+            <label>Message:</label><br/>
+            <textarea formControlName="message"></textarea>
+        </p>
+        <p>
+            <button type="submit" [disabled]="!modelDrivenForm.valid">Submit</button>
+        </p>
+    </form>
+
+</div>

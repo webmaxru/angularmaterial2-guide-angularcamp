@@ -1,3 +1,15 @@
 <h1>
   {{title}}
 </h1>
+<div class="component">
+
+  <nav>
+    <a [routerLink]="['/places']">Best places</a>
+    |
+    <a [routerLink]="['/feedback']">Leave your feedback</a>
+    |
+    <a [routerLink]="['/contact']">Contact us</a>
+  </nav>
+  <router-outlet></router-outlet>
+
+</div>
