@@ -14,7 +14,16 @@ import {MD_CHECKBOX_DIRECTIVES} from '@angular2-material/checkbox';
     MD_BUTTON_DIRECTIVES,
     MD_INPUT_DIRECTIVES,
     MD_CHECKBOX_DIRECTIVES
-  ]
+  ],
+  styles: [`
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  md-input {
+    margin-bottom: 1em;
+  }
+  `]
 })
 export class FeedbackComponent {
 

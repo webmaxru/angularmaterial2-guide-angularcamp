@@ -1,17 +1,17 @@
-<md-sidenav-layout>
+<md-sidenav-layout fullscreen>
   <md-sidenav #sidenav mode="over" class="app-sidenav">
 
     <md-nav-list>
       <a md-list-item [routerLink]="['/places']">
-        <md-icon md-list-icon>assignment</md-icon>
+        <md-icon md-list-icon>account_balance</md-icon>
         <span md-line>Best places</span>
       </a>
       <a md-list-item [routerLink]="['/feedback']">
-        <md-icon md-list-icon>assignment</md-icon>
+        <md-icon md-list-icon>announcement</md-icon>
         <span md-line>Leave your feedback</span>
       </a>
       <a md-list-item [routerLink]="['/contact']">
-        <md-icon md-list-icon>assignment</md-icon>
+        <md-icon md-list-icon>email</md-icon>
         <span md-line>Contact us</span>
       </a>
     </md-nav-list>
@@ -19,25 +19,35 @@
   </md-sidenav>
 
   <md-toolbar color="primary">
-    <button class="app-icon-button" (click)="sidenav.toggle()">
-      <i class="material-icons app-toolbar-menu">menu</i>
+    <button md-icon-button (click)="sidenav.toggle()">
+      <i class="material-icons">menu</i>
     </button>
 
     {{title}}
 
-    <span class="app-toolbar-filler"></span>
   </md-toolbar>
 
-  <div class="app-content">
+  <md-card *ngIf="isFeedbackFormVisible">
+    <md-card-title>Feedback</md-card-title>
+    <md-card-content>
+      <form>
+        <md-input placeholder="Name" name="name"></md-input>
+        <md-input placeholder="Email" name="email"></md-input>
+        <md-input placeholder="Message" name="message"></md-input>
+        <div>
+          <md-checkbox name="agree" indeterminate="true" required>I agree with terms</md-checkbox>
+        </div>
+      </form>
+    </md-card-content>
+    <md-card-actions>
+      <button md-button color="primary" type="submit">Send</button>
+    </md-card-actions>
+  </md-card>
 
-    <router-outlet></router-outlet>
-
-  </div>
+  <router-outlet></router-outlet>
 
 </md-sidenav-layout>
 
-<span class="app-action">
-  <button md-fab>
-    <md-icon>check circle</md-icon>
-  </button>
-</span>
+<button md-fab (click)="isFeedbackFormVisible=!isFeedbackFormVisible">
+  <md-icon>email</md-icon>
+</button>

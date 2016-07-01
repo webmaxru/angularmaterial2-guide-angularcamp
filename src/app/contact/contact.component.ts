@@ -19,6 +19,15 @@ import {MD_INPUT_DIRECTIVES} from '@angular2-material/input';
     MD_INPUT_DIRECTIVES,
   ],
   providers: [MdUniqueSelectionDispatcher],
+  styles: [`
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  md-input {
+    margin-bottom: 1em;
+  }
+  `]
 })
 export class ContactComponent {
 

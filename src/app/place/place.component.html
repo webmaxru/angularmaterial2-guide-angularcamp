@@ -1,8 +1,9 @@
 <md-card>
+  <img md-card-image [alt]="name" src="./data/place.jpg">
   <md-card-title>
     <span [ngClass]="{'visited': isVisited }">{{name}}</span>
   </md-card-title>
   <md-card-actions>
-    <button md-raised-button color="primary" (click)="doVisit(name)">Visited</button>
+    <button md-button color="primary" (click)="doVisit(name)">Visited</button>
   </md-card-actions>
 </md-card>
